@@ -2,9 +2,12 @@ import React, {useState} from 'react';
 import {View, Text, Pressable} from 'react-native';
 import styles from './styles';
 import {useNavigation} from '@react-navigation/native';
+import {useDispatch} from 'react-redux';
+import {selectName} from '../../redux/features/testSlice';
 
 const GuestScreen = () => {
   const [adult, setadult] = useState(0);
+  const dispatch = useDispatch();
   const [children, setchildren] = useState(0);
   const [infant, setinfant] = useState(0);
   const navigation = useNavigation();
@@ -29,7 +32,10 @@ const GuestScreen = () => {
           </View>
           <View style={{flexDirection: 'row', alignItems: 'center'}}>
             <Pressable
-              onPress={() => setadult(Math.max(0, adult - 1))}
+              onPress={() => {
+                dispatch(selectName('Anshul'));
+                setadult(Math.max(0, adult - 1));
+              }}
               style={styles.button}>
               <Text style={{fontSize: 20, color: '#474747'}}>-</Text>
             </Pressable>

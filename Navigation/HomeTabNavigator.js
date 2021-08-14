@@ -7,6 +7,10 @@ import FontAwesome5 from 'react-native-vector-icons/FontAwesome5';
 import EvilIcons from 'react-native-vector-icons/EvilIcons';
 import Feather from 'react-native-vector-icons/Feather';
 import ExploreNavigator from './ExploreNavigator';
+import ImageAnimation from '../screens/AnimationComponents/ImageAnimation';
+import FlastlistScrollAnimation from '../screens/AnimationComponents/FlastlistScrollAnimation';
+import FlatListVerticalScroll from '../screens/AnimationComponents/FlatListVerticalScroll';
+import MultipleFlatlistAnimation from '../screens/AnimationComponents/MultipleFlatlistAnimation';
 const Tab = createBottomTabNavigator();
 
 const HomeTabNavigator = () => {
@@ -26,7 +30,7 @@ const HomeTabNavigator = () => {
       />
       <Tab.Screen
         name={'Saved'}
-        component={HomeScreen}
+        component={ImageAnimation}
         options={{
           tabBarIcon: ({color}) => (
             <FontAwesome name="heart-o" size={25} color={color} />
@@ -35,7 +39,7 @@ const HomeTabNavigator = () => {
       />
       <Tab.Screen
         name={'Airbnb'}
-        component={HomeScreen}
+        component={FlastlistScrollAnimation}
         options={{
           tabBarIcon: ({color}) => (
             <FontAwesome5 name="airbnb" size={25} color={color} />
@@ -44,7 +48,7 @@ const HomeTabNavigator = () => {
       />
       <Tab.Screen
         name={'Messages'}
-        component={HomeScreen}
+        component={FlatListVerticalScroll}
         options={{
           tabBarIcon: ({color}) => (
             <Feather name="message-square" size={25} color={color} />
@@ -53,7 +57,7 @@ const HomeTabNavigator = () => {
       />
       <Tab.Screen
         name={'Profile'}
-        component={HomeScreen}
+        component={MultipleFlatlistAnimation}
         options={{
           tabBarIcon: ({color}) => (
             <EvilIcons name="user" size={25} color={color} />

@@ -4,8 +4,11 @@ import styles from './styles';
 import Fontisto from 'react-native-vector-icons/Fontisto';
 // import Icon from 'react-native-vector-icons/Ionicons';
 import {useNavigation} from '@react-navigation/native';
+import {useSelector} from 'react-redux';
+import {namevalue} from '../../redux/features/testSlice';
 const index = () => {
   const navigation = useNavigation();
+  const name = useSelector(namevalue);
   return (
     <View>
       <Pressable
@@ -13,7 +16,7 @@ const index = () => {
         onPress={() => navigation.navigate('Destination Search')}>
         {/* <Icon name="ios-book" size={25} color="#4F8EF7" /> */}
         <Fontisto name="search" size={25} color={'#f15454'} />
-        <Text style={styles.searchbuttontext}>Where are you going?</Text>
+        <Text style={styles.searchbuttontext}>Where are you going {name}?</Text>
       </Pressable>
       <ImageBackground
         source={{
