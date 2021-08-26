@@ -22,7 +22,7 @@ const DestinationSearchScreen = () => {
         renderItem={({item}) => (
           <Pressable
             style={styles.row}
-            onPress={() => navigation.navigate('Guests')}>
+            onPress={() => navigation.navigate('Animation')}>
             <View style={styles.iconcontainer}>
               <Entypo name={'location-pin'} size={30} />
             </View>

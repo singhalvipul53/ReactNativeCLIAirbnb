@@ -26,7 +26,7 @@ const index = () => {
         <Text style={styles.title}>Go Near</Text>
         <Pressable
           style={styles.button}
-          onPress={() => console.warn('Explore btn Clicked')}>
+          onPress={() => navigation.navigate('CircleAnimation')}>
           <Text style={styles.buttontext}>Explore Nearby stays</Text>
         </Pressable>
       </ImageBackground>
